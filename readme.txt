@@ -44,7 +44,7 @@ DOCUMENTATION
 *****************************
 
 Pour consulter la documentation, vous devez suivre les indications suivantes : 
-1) Accéder au dossier 'doc/'
+1) Accéder au dossier 'WebServiceNonFonctionnel/ProxibanqueV4'
 2) Double cliquez sur 'index.html'
 
 *****************************
