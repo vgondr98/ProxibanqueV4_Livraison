@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ProxibanqueV4-webservices">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="Proxibanquev4-domaine-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Proxibanquev4-domaine/Proxibanquev4-domaine">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ProxibanqueV4-dao-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ProxibanqueV4-dao/ProxibanqueV4-dao">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="ProxibanqueV4-webservices"/>
+        <property name="java-output-path" value="/ProxibanqueV4-webservices/target/classes"/>
+    </wb-module>
+</project-modules>
