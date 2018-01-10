@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<div class="row">   
+        <div class="col-sm-2"> </div>
+<div class="col-sm-6">
+        <div class="containerproxi">
+        <form [formGroup]="formvirement" (ngSubmit)="fairevirement()" >
+        <div class="form-group">
+            <label class="center-block">Compte à débiter:</label>
+                <select formControlName="comptedebit" [(ngModel)]="comptedebit" class="form-control" [(ngModel)]="comptedebit">
+                    <option *ngFor="let compte of listeCptDebit" [value]="compte">{{compte.numcompte}}</option>
+                </select>    
+                <label class="center-block">Compte à créditer:</label>    
+                <select formControlName="comptecredit" [(ngModel)]="comptecredit" class="form-control" [(ngModel)]="comptecredit">
+                        <option *ngFor="let compte of listeCptCredit" [value]="compte">{{compte.numcompte}}</option>
+                    </select>    
+
+                <label class="center-block">Montant du virement:</label>    
+                <input type="number" formControlName="montant" class="form-control" [(ngModel)]="montant" >
+            </div>
+            <button class="btn btn-primary" (click)="faireVirement()">
+                    Faire le Virement
+                     </button>
+        </form>
+    </div>
+    <div *ngIf="message" class="alert alert-success">{{message}}</div>
+
+</div>
+</div>
+
+
+

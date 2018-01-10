@@ -1,0 +1,45 @@
+
+<app-navbar></app-navbar>
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-8">
+<div class="containerproxi">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        </thead>
+    <tr *ngFor="let conseiller of conseillers"  
+    [class.selected]="conseiller === selectedConseiller" (click)="afficherStats(conseiller)">
+     
+      <th>{{conseiller.idConseiller}}</th>
+      <th>{{conseiller.nom}}</th>
+      <th>{{conseiller.prenom}}</th>   
+    
+    </tr>
+    </table>
+</div>
+<div class="col-sm-2"></div>
+
+</div>
+</div>
+
+
+<br>
+<br>
+<div class="row">
+<div class="col-sm-1"></div>
+<div class="col-sm-10">
+    <div *ngIf="selectedConseiller">
+        <div class="containerproxi">
+                {{statsConseillerVir.mois1}}
+        </div>  
+</div>
+    <div class="col-sm-1">
+</div> 
+
+
+
+
+

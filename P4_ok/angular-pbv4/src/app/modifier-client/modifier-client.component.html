@@ -1,0 +1,69 @@
+<app-navbar></app-navbar>
+<div class="row">
+<div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="containerproxi">
+
+                <form name="formModif" (ngSubmit)="formModif.form.valid" #formModif="ngForm" novalidate>
+                        <div class="form-group" [ngClass]="{ 'has-error': formModif.submitted && !nomcli.valid }">
+                            <label for="nomcli"><p>Nom:</p></label>
+                            <input type="text" class="form-control" required value={{client.nomcli}}/>
+                            <div *ngIf="formModif.submitted && !nomcli.valid" class="help-block">Veuillez remplir le nom</div>
+                        </div>
+            
+                        <div class="form-group" [ngClass]="{ 'has-error': formModif.submitted && !prenomcli.valid }">
+                                <label for="prenomcli"><p>Prénom</p></label>
+                                <input type="text" class="form-control" name="prenomcli" value={{client.prenomcli}}  required />
+                                <div *ngIf="formModif.submitted && !prenomcli.valid" class="help-block">Veuillez remplir le prénom</div>
+                        </div>
+            
+                        <div class="form-group" [ngClass]="{ 'has-error': formModif.submitted && !Adresse.valid }">
+                                <label for="Adresse"><p>Adresse:</p></label>
+                                <input type="text" class="form-control" name="Adresse" value={{client.Adresse}} required />
+                                <div *ngIf="formModif.submitted && !Adresse.valid" class="help-block">Veuillez remplir l'adresse</div>
+                        </div>
+            
+                        <div class="form-group" [ngClass]="{ 'has-error': formModif.submitted && !codepostal.valid }">
+                                <label for="codepostal"><p>Code Postal:</p></label>
+                                <input type="text" class="form-control" name="codepostal" required value={{client.codepostal}} />
+                                <div *ngIf="formModif.submitted && !codepostal.valid" class="help-block">Veuillez remplir le code postal</div>
+                        </div>
+            
+                        <div class="form-group" [ngClass]="{ 'has-error': formModif.submitted && !Ville.valid }">
+                                <label for="Ville"><p>Ville:</p></label>
+                                <input type="text" class="form-control" name="Ville" required value={{client.Ville}}/>
+                                <div *ngIf="formModif.submitted && !Ville.valid" class="help-block">Veuillez remplir la ville</div>
+                        </div>
+            
+                        <div class="form-group" [ngClass]="{ 'has-error': formModif.submitted && !Telephone.valid }">
+                                <label for="Telephone"><p>Téléphone:</p></label>
+                                <input type="text" class="form-control" name="Telephone" required value={{client.Telephone}} />
+                                <div *ngIf="formModif.submitted && !Telephone.valid" class="help-block">Veuillez remplir le numéro de téléphone</div>
+                        </div>
+            
+                        <div class="form-group" [ngClass]="{ 'has-error': formModif.submitted && !Email.valid }">
+                                <label for="Email"><p>Adresse mail:</p></label>
+                                <input type="text" class="form-control" name="Email" required value={{client.Email}}/>
+                                <div *ngIf="formModif.submitted && !Email.valid" class="help-block">Veuillez remplir l'adresse e-mail</div>
+                        </div>
+                        
+                        <div class="form-group">
+                                <button [disabled]="!formModif.form.valid" class="btn btn-primary" (click)="modifierClient()">
+                                       Enregistrer les modifications
+                                        </button>
+                        </div>
+            
+                    </form>
+                    <div *ngIf="message" class="alert alert-success">{{message}}</div>
+                    </div>
+                </div>
+                    <div class="col-sm-2"></div>
+                    </div>
+
+
+
+
+
+
+      
+    

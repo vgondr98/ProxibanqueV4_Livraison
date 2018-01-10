@@ -1,0 +1,60 @@
+
+<app-navbar> </app-navbar>
+
+<app-btn-ajout></app-btn-ajout>
+<br>
+<div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+<div class="containerproxi">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <th></th>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Adresse</th>
+        <th>Telephone</th>
+        <th>Email</th>
+        <th></th>
+        </thead>
+    <tr *ngFor="let client of clients"  
+    [class.selected]="client === selectedClient">
+      <th (click)="afficherComptes(client)"></th>
+      <th (click)="afficherComptes(client)">{{client.idcli}}</th>
+      <th (click)="afficherComptes(client)">{{client.nomcli}}</th>
+      <th (click)="afficherComptes(client)">{{client.prenomcli}}</th>
+      <th (click)="afficherComptes(client)">{{client.Adresse}} {{client.codepostal}} {{client.Ville}}</th>
+      <th (click)="afficherComptes(client)">{{client.Telephone}}</th>
+      <th (click)="afficherComptes(client)">{{client.Email}}</th>
+      <th  routerLink="/conseiller/Modifierclient/{{client.idcli}}">Modifier</th>       
+    </tr>
+    </table>
+</div>
+
+<div class="col-sm-1"></div>
+
+</div>
+</div>
+
+<br>
+<br>
+<div *ngIf="selectedClient">
+    <div *ngFor="let compte of listeCptCli" class="col-sm-6">
+        <div class="containerproxi" [class.decouvert]="compte.solde+compte.decouvert<0" >
+            Compte n° {{compte.numcompte}}<br>            
+            Solde: {{compte.solde}}<br>
+            Type de Compte: {{compte.TYPE_COMPTE}}<br>
+            Date d'ouverture: {{compte.dateouv}}
+            <div *ngIf="compte.TYPE_COMPTE==='courant'">
+            Découvert autorisé: {{compte.decouvert}} €
+            </div>
+            <div *ngIf="compte.TYPE_COMPTE==='epargne'">
+            Taux de Rémunération: {{compte.tauxrem}} %
+            </div>
+    </div>
+    </div>
+
+</div>
+
+
